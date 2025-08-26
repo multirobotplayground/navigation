@@ -399,7 +399,8 @@ namespace navfn {
 
     planner_->setStart(map_goal);
 
-    planner_->calcPath(costmap_->getSizeInCellsX() * 4);
+    // ALYSSON CHANGED HERE
+    planner_->calcPath(costmap_->getSizeInCellsX() * costmap_->getSizeInCellsY());
 
     //extract the plan
     float *x = planner_->getPathX();
