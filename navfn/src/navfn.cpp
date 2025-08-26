@@ -78,7 +78,7 @@ namespace navfn {
 
       // calculate the nav fn and path
       nav->priInc = 2*COST_NEUTRAL;
-      nav->propNavFnAstar(std::max(nx*ny/20,nx+ny));
+      nav->propNavFnAstar(nx*ny);
 
       // path
       int len = nav->calcPath(nplan);
@@ -295,7 +295,8 @@ namespace navfn {
       propNavFnDijkstra(std::max(nx*ny/20,nx+ny),atStart);
 
       // path
-      int len = calcPath(nx*ny/2);
+      // ALYSSON CHANGED HERE
+      int len = calcPath(nx*ny);
 
       if (len > 0)			// found plan
       {
@@ -324,7 +325,8 @@ namespace navfn {
       propNavFnAstar(std::max(nx*ny/20,nx+ny));
 
       // path
-      int len = calcPath(nx*4);
+      // ALYSSON CHANGED HERE
+      int len = calcPath(nx*ny);
 
       if (len > 0)			// found plan
       {
